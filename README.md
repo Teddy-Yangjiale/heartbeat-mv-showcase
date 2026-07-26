@@ -72,9 +72,9 @@ main grid instead of in the standard grid.
   ffmpeg -i input_raw.mp4 -c:v libx264 -crf 23 -preset medium \
          -c:a aac -b:a 128k -movflags +faststart output.mp4
   ```
-- Two tracks are encoded as HEVC/H.265, which does not play in every browser
-  (Safari is fine, Chrome needs hardware decoding, older Firefox cannot play it).
-  Re-encoding them to H.264 would make playback universal.
+- Every track is encoded as H.264 / AAC in MP4, which plays in every current
+  browser. Avoid HEVC/H.265: Safari handles it, but Chrome needs hardware decoding
+  and older Firefox cannot play it at all.
 
 ## Deployment
 
