@@ -1,44 +1,84 @@
-# Heartbeat MV · 项目展板
+# Heartbeat MV · Project Showcase
 
-将心跳音频融入歌曲、生成音乐 MV 的作品展示网页（纯静态）。
+A fully static showcase page for music videos generated from songs fused with real
+heartbeat audio.
 
-## 目录结构
+Built for **SWS3027-02 — Introduction to Speech and Music Processing**
+Team: Ao Ziyan · Zhang Lanyue · Yang Jiale · Xu Minghe
+
+Live site: https://heartbeat-mv-showcase.vercel.app/
+
+## Directory layout
 
 ```
 heartbeat-mv-showcase/
-├── index.html            # 页面结构
+├── index.html            # Page structure
 ├── assets/
-│   ├── css/style.css     # 样式（深色 + 心跳脉冲动画）
-│   └── js/main.js        # 渲染卡片 / 弹窗播放
-├── data/videos.json      # 项目文案 + 视频列表（改文案只动这里）
-├── videos/               # 视频文件（.mp4）
+│   ├── css/style.css     # Styling (dark theme + heartbeat pulse animation)
+│   └── js/main.js        # Card rendering / modal playback
+├── data/videos.json      # Project copy + video list (edit copy here only)
+├── videos/               # Video files (.mp4)
+├── thumbs/               # Poster frames (.jpg), one per video
 └── README.md
 ```
 
-## 本地预览
+## Local preview
 
-页面通过 `fetch` 读取 `data/videos.json`，**直接双击 index.html 会因浏览器 file:// 限制而加载失败**，需用本地服务器打开：
+The page loads `data/videos.json` via `fetch`, so **opening index.html by
+double-clicking it will fail** because of the browser's `file://` restrictions.
+Serve it over HTTP instead.
 
-任选一种（在项目根目录执行）：
+Pick either one, from the project root:
 
 ```powershell
-# Python（推荐，Windows 一般自带）
+# Python (recommended, usually preinstalled on Windows)
 python -m http.server 8000
 
-# 或 Node
+# Or Node
 npx serve .
 ```
 
-然后浏览器打开 http://localhost:8000
+Then open http://localhost:8000
 
-## 修改内容
+## Editing content
 
-- **改标题 / 简介 / 标签**：编辑 `data/videos.json` 的 `project` 部分
-- **改每个视频的标题 / 描述**：编辑 `data/videos.json` 的 `videos` 数组
-- **加新视频**：把 mp4 放进 `videos/`，在 `videos.json` 的 `videos` 里加一项 `{ "file": "...", "title": "...", "description": "..." }`
+- **Title / intro / tags** — edit the `project` section of `data/videos.json`
+- **Course and team members** — edit `project.course` and the `project.members` array
+- **Per-video title / description** — edit the `videos` array in `data/videos.json`
 
-## 部署
+### Adding a new video
 
-纯静态，把整个文件夹上传即可：
-- **GitHub Pages**：推到仓库，Settings → Pages 选分支根目录
-- **Vercel / Netlify**：拖拽文件夹或连接仓库，无需构建配置
+1. Drop the `.mp4` into `videos/`.
+2. Generate its poster frame into `thumbs/` using the same basename:
+   ```bash
+   ffmpeg -i videos/<name>.mp4 -vframes 1 -vf "scale=640:-1" thumbs/<name>.jpg
+   ```
+   Put `-ss <seconds>` before `-i` if the first frame is a black fade-in.
+3. Append an entry to the `videos` array:
+   ```json
+   { "file": "<name>.mp4", "title": "...", "description": "..." }
+   ```
+
+Add `"featured": true` to an entry to place it in the centred two-up row above the
+main grid instead of in the standard grid.
+
+## Notes on media files
+
+- Both Vercel and GitHub reject any single file larger than **100 MB**. Keep every
+  `.mp4` comfortably below that.
+- Uncompressed sources matching `videos/*_raw.mp4` are excluded from git and from
+  deployment. To publish one, re-encode it first:
+  ```bash
+  ffmpeg -i input_raw.mp4 -c:v libx264 -crf 23 -preset medium \
+         -c:a aac -b:a 128k -movflags +faststart output.mp4
+  ```
+- Two tracks are encoded as HEVC/H.265, which does not play in every browser
+  (Safari is fine, Chrome needs hardware decoding, older Firefox cannot play it).
+  Re-encoding them to H.264 would make playback universal.
+
+## Deployment
+
+Fully static, no build step required.
+
+- **Vercel** (current): `vercel deploy --prod`, or connect the repository
+- **GitHub Pages**: push, then Settings → Pages → select the branch root
