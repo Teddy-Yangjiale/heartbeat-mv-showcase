@@ -1,0 +1,8 @@
+.vercel
+
+# Uncompressed source, 199 MB — exceeds GitHub's 100 MB per-file limit.
+# The deployed 41 MB re-encode (076fc677fcd13c7e927c7636b0f17763.mp4) is tracked instead.
+videos/*_raw.mp4
+
+# Byte-identical duplicate of 90a109b9c4b3bb0661e734a151413b6e.mp4 (Daddy)
+videos/8c061f1ce6afc7e59e5fe67b2cc6f122.mp4

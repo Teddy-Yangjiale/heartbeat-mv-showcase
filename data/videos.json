@@ -1,0 +1,85 @@
+{
+  "project": {
+    "title": "Heartbeat MV",
+    "subtitle": "Music videos generated from songs fused with real heartbeat audio",
+    "description": "This project explores a new approach to music generation: taking real heartbeat audio as the seed for rhythm and emotion, weaving it into the songwriting, and generating a companion music video for every track. Our works are shown below.",
+    "team": "SWS3027-02",
+    "course": "Introduction to Speech and Music Processing",
+    "members": ["Ao Ziyan", "Zhang Lanyue", "Yang Jiale", "Xu Minghe"],
+    "tags": ["Heartbeat Audio", "AI Music", "Generative MV"]
+  },
+  "videos": [
+    {
+      "file": "90a109b9c4b3bb0661e734a151413b6e.mp4",
+      "title": "Daddy",
+      "description": "Coldplay",
+      "featured": true
+    },
+    {
+      "file": "076fc677fcd13c7e927c7636b0f17763.mp4",
+      "title": "Edelweiss",
+      "description": "Hand-drawn lyric animation",
+      "featured": true
+    },
+    {
+      "file": "060eb487aefba3f7021dcb1b669ed111.mp4",
+      "title": "Sugar On My Tongue",
+      "description": "Tyler, The Creator"
+    },
+    {
+      "file": "7254b112cac0a24d65d5131f9e1224ad.mp4",
+      "title": "Instrumental",
+      "description": "Zhang Lanyue (instrumental)"
+    },
+    {
+      "file": "e0ae70f08ff99e29dfc6812d8bd61fff.mp4",
+      "title": "after-hours",
+      "description": "Unknown artist"
+    },
+    {
+      "file": "e1d6a550426a7c191093afc2f7486951.mp4",
+      "title": "Only Twenty-Three",
+      "description": "Khalil Fong"
+    },
+    {
+      "file": "eba1c261b975a617d315e3f6bf25b571.mp4",
+      "title": "Daylily",
+      "description": "Zhang Lanyue (cover)"
+    },
+    {
+      "file": "196e921310c4379fbd3674c1f3fb5a70.mp4",
+      "title": "No Man's Sky",
+      "description": "Unknown artist"
+    },
+    {
+      "file": "7cfe4d6004ec0c6422cb2580aad60acc.mp4",
+      "title": "White Ferrari",
+      "description": "Frank Ocean"
+    },
+    {
+      "file": "b280083e886f6b7960412bb243401d3a.mp4",
+      "title": "Moonlight",
+      "description": "Unknown artist"
+    },
+    {
+      "file": "cc612e35bf860949f26e500659453fb0.mp4",
+      "title": "Fly On",
+      "description": "Coldplay"
+    },
+    {
+      "file": "d8303a5f88c4c3d73766110e73d53e70.mp4",
+      "title": "Mohe Ballroom",
+      "description": "Liu Shuang"
+    },
+    {
+      "file": "dc8c28ebd90129b214758e249ebc33ae.mp4",
+      "title": "You're Losing Me (From The Vault)",
+      "description": "Taylor Swift"
+    },
+    {
+      "file": "e4f2569c6991e5d73d4ca661cf964de6.mp4",
+      "title": "Carry On",
+      "description": "XXXTENTACION"
+    }
+  ]
+}

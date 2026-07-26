@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heartbeat MV · Project Showcase</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow" id="hero-team">SWS3027-02</p>
+      <h1 class="hero__title" id="hero-title">Heartbeat MV</h1>
+      <p class="hero__subtitle" id="hero-subtitle"></p>
+      <p class="hero__desc" id="hero-desc"></p>
+      <p class="hero__course" id="hero-course"></p>
+      <p class="hero__members" id="hero-members"></p>
+      <ul class="hero__tags" id="hero-tags"></ul>
+      <a class="hero__cta" href="#gallery">View the works ↓</a>
+    </div>
+    <div class="hero__pulse" aria-hidden="true">
+      <svg viewBox="0 0 600 100" preserveAspectRatio="none">
+        <path class="pulse-line" d="M0,50 L120,50 L140,50 L150,20 L160,80 L172,10 L185,90 L200,50 L320,50 L340,50 L350,25 L360,75 L372,15 L385,85 L400,50 L600,50" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- Gallery -->
+  <main>
+    <section id="gallery" class="gallery">
+      <div class="gallery__head">
+        <h2>Works</h2>
+        <p class="gallery__count" id="gallery-count"></p>
+      </div>
+      <!-- Featured works, rendered side by side and centred -->
+      <div class="grid grid--featured" id="featured-grid"></div>
+      <!-- Remaining works, rendered by JS -->
+      <div class="grid" id="video-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-text">© <span id="year"></span> Heartbeat MV Project</p>
+  </footer>
+
+  <!-- Playback modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" data-close aria-label="Close">×</button>
+      <div class="modal__video-wrap">
+        <video id="modal-video" controls playsinline></video>
+      </div>
+      <div class="modal__meta">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
