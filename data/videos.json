@@ -10,6 +10,12 @@
   },
   "videos": [
     {
+      "file": "eba1c261b975a617d315e3f6bf25b571.mp4",
+      "title": "Daylily",
+      "description": "Zhang Lanyue (cover)",
+      "featured": true
+    },
+    {
       "file": "90a109b9c4b3bb0661e734a151413b6e.mp4",
       "title": "Daddy",
       "description": "Coldplay",
@@ -72,14 +78,14 @@
       "description": "Unknown artist"
     },
     {
-      "file": "eba1c261b975a617d315e3f6bf25b571.mp4",
-      "title": "Daylily",
-      "description": "Zhang Lanyue (cover)"
-    },
-    {
       "file": "7254b112cac0a24d65d5131f9e1224ad.mp4",
       "title": "Instrumental",
       "description": "Zhang Lanyue (instrumental)"
+    },
+    {
+      "file": "3af5d0aa8af27e377cebe06f28d9ecf1.mp4",
+      "title": "this is what sadness feels like",
+      "description": "JVKE"
     }
   ]
 }
